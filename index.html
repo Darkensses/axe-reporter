@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="shades-of-purple.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+	<title>Insigther - Accessibility Report</title>
+</head>
+<body>
+	<div id="report" class="p-4 max-w-screen-md mx-auto">
+		<h1 class="text-3xl font-bold">
+			Accessibility Report
+		</h1>
+		<p class="text-xs text-slate-500">
+			https://www.washington.edu/accesscomputing/AU/before.html
+		</p>
+
+		<div id="summary"
+		class="my-4 p-4 rounded-sm flex gap-4 justify-between items-center">
+
+			<div id="summary-violations"
+			class="flex flex-1 flex-col justify-center p-4 border rounded-md">
+				<div class="flex w-full justify-between items-center">
+					<p class="text-sm font-semibold">
+						Failed Checks
+					</p>
+					<svg class="text-gray-500 h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+				</div>
+				<span class="text-3xl text-gray-500 font-bold">
+					0
+				</span>
+			</div>
+
+			<div id="summary-incomplete"
+			class="flex flex-1 flex-col justify-center p-4 border rounded-md">
+				<div class="flex w-full justify-between items-center">
+					<p class="text-sm font-semibold">
+						Review Items
+					</p>
+					<svg class="text-gray-500 h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+				</div>
+				<span class="text-3xl text-gray-500 font-bold">
+					0
+				</span>
+			</div>
+
+			<div id="summary-passes"
+			class="flex flex-1 flex-col justify-center p-4 border rounded-md">
+				<div class="flex w-full justify-between items-center">
+					<p class="text-sm font-semibold">
+						Passed Checks
+					</p>
+					<svg class="text-gray-500 h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+				</div>
+				<span class="text-3xl text-gray-500 font-bold">
+					0
+				</span>
+			</div>
+
+			<div id="summary-inapplicable"
+			class="flex flex-1 flex-col justify-center p-4 border rounded-md">
+				<div class="flex w-full justify-between items-center">
+					<p class="text-sm font-semibold">
+						Not Applicable
+					</p>
+					<svg class="text-gray-500 h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.1 2.182a10 10 0 0 1 3.8 0"/><path d="M13.9 21.818a10 10 0 0 1-3.8 0"/><path d="M17.609 3.721a10 10 0 0 1 2.69 2.7"/><path d="M2.182 13.9a10 10 0 0 1 0-3.8"/><path d="M20.279 17.609a10 10 0 0 1-2.7 2.69"/><path d="M21.818 10.1a10 10 0 0 1 0 3.8"/><path d="M3.721 6.391a10 10 0 0 1 2.7-2.69"/><path d="M6.391 20.279a10 10 0 0 1-2.69-2.7"/></svg>
+				</div>
+				<span class="text-3xl text-gray-500 font-bold">
+					0
+				</span>
+			</div>
+
+		</div>
+
+		<button id="btn-violations" class="p-4 w-full h-10 rounded-md flex justify-between items-center hover:bg-slate-100">
+			<h2 class="font-bold text-xl">Failed Checks</h2>
+			<svg class="text-current w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+		</button>
+		<div id="panelViolations" class="p-4" style="display: none;">
+			<p class="text-sm italic text-zinc-500 pb-4">
+				These are classified into different categories of violations.
+				The total number of failures is calculated by adding the number of
+				violations in each category.
+			</p>
+
+			<div id="violations" class="rounded-md">
+			</div>
+
+		</div>
+
+		<button id="btn-incomplete" class="p-4 w-full h-10 rounded-md flex justify-between items-center hover:bg-slate-100">
+			<h2 class="font-bold text-xl">Review Items</h2>
+			<svg class="text-current w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+		</button>
+		<div id="panelIncomplete" class="p-4" style="display: none;">
+			<p class="text-sm italic text-zinc-500 pb-4">
+				Indicates which nodes could neither be determined to definitively pass
+				or definitively fail. They are separated out in order that a user
+				interface can display these to the user for manual review
+				(hence the term "review items").
+			</p>
+
+			<div id="incomplete" class="rounded-md">
+			</div>
+
+		</div>
+
+		<button id="btn-passes" class="p-4 w-full h-10 rounded-md flex justify-between items-center hover:bg-slate-100">
+			<h2 class="font-bold text-xl">Passed Checks</h2>
+			<svg class="text-current w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+		</button>
+		<div id="panelPasses" class="p-4" style="display: none;">
+			<p class="text-sm italic text-zinc-500 pb-4">
+				Keeps track of all the passed tests, along with detailed information on
+				each one. This leads to more efficient testing, especially when used in
+				conjunction with manual testing, as the user can easily find out what
+				tests have already been passed.
+			</p>
+
+			<div id="passes" class="rounded-md">
+			</div>
+
+		</div>
+
+		<button id="btn-inapplicable" class="p-4 w-full h-10 rounded-md flex justify-between items-center hover:bg-slate-100">
+			<h2 class="font-bold text-xl">Not Applicable</h2>
+			<svg class="text-current w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+		</button>
+		<div id="panelInapplicable" class="p-4" style="display: none;">
+			<p class="text-sm italic text-zinc-500 pb-4">
+				All the rules for which no matching elements were found on the page.
+			</p>
+
+			<div id="inapplicable" class="rounded-md">
+			</div>
+
+		</div>
+
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
